@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="phone">
+            <div class="display"></div>
+            <hr>
+            <div class="button">
+                <button class="btn" value="7">7</button>
+                <button class="btn" value="8">8</button>
+                <button class="btn" value="9">9</button>
+                <button class="btn" value="4">4</button>
+                <button class="btn" value="5">5</button>
+                <button class="btn" value="6">6</button>
+                <button class="btn" value="1">1</button>
+                <button class="btn" value="2">2</button>
+                <button class="btn" value="3">3</button>
+                <button class="btn" value="*">*</button>
+                <button class="btn" value="0">0</button>
+                <button class="btn" value="#">#</button>
+            </div>
+            <div class="callbtn">
+                <button class="btn plus" value="+">+</button>
+                <button class="call">📞</button>
+                <button class=" btn cut">cut</button>
+            </div>
+            
+           
+        </div>
+    </div>
+
+    <script>
+        "use strict"
+
+        const button=document.querySelector(".button")
+        const display=document.querySelector(".display")
+        const call=document.querySelector(".call")
+        const cut=document.querySelector(".cut")
+         
+        const displayIN=document.querySelector(".display #text")
+
+
+        // function phoneCall(){
+        //     document.querySelector("body").innerHTML+=`<a href="tel:+${displayIN}" target="_self" ></a>`
+        //     console.log(displayIN)
+
+        // }
+
+        button.addEventListener("click", function(e){
+            const value=e.target.value
+            
+            if(value==undefined){
+                display.innerHTML=""
+            }
+            else{
+                display.innerHTML+=value
+            }
+            console.log(display)
+        })
+        document.querySelector(".plus").addEventListener("click", function(){
+                display.innerHTML+=this.value
+        })
+
+        cut.addEventListener("click",function(){
+            display.innerHTML=display.textContent.substr(0,display.textContent.length-1)
+        })
+        call.innerHTML=`<a href="tel:+${displayIN}">📞</a>`
+
+        // call.addEventListener("click",function(){
+        //     call.innerHTML=`<a href="tel:+${displayIN}" target="_self" ></a>📞`
+        //     // phoneCall()
+        // })
+
+         
+    </script>
+    
+</body>
+</html>
